@@ -1,0 +1,13 @@
+<h1>
+Likes
+
+<div class="container mt-4">
+<% @likes.each do  |like| %>
+
+    <div class="card mb-3">
+        <h1 class="text-dark p-4"><%= like.user.email %></h1>
+  </div>
+
+<% end %>
+</div>
+</h1>

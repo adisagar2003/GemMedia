@@ -1,0 +1,50 @@
+<h1>Comments </h1>
+
+
+<div class="container my-5 py-5 text-dark overflow-auto " style="height:500px">
+
+
+<% if @comments.count==0 %>
+<div class="card mb-3 text-dark p-4">
+    No Comments yet
+    <a href="new" class="link-grey">
+    <button class="comment_button">
+    Write your own comment
+    </button>
+    </a> 
+
+</div>
+<% end %>
+<% @comments.each do  |comment| %>
+
+    <div class="card mb-3">
+    <div class="card-body">
+      <div class="d-flex flex-start">
+      
+        <div class="w-100">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h6 class="text-primary fw-bold mb-0">
+             <%= comment.post.user.email %>
+              <span class="text-dark ms-2"><%= comment.content %></span>
+            </h6>
+            <p class="mb-0 text-dark"><%= comment.created_at %></p>
+          </div>
+          <div class="d-flex justify-content-between align-items-center">
+            <p class="small mb-0" style="color: #aaa;">
+              <a href="/posts/<%= comment.post.id %>/comments/new" class="link-grey">Write your own comment</a> •
+           
+            </p>
+            <div class="d-flex flex-row">
+              <i class="far fa-check-circle text-primary"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<% end %>
+
+</div>
+
+

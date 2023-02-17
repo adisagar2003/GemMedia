@@ -1,0 +1,19 @@
+
+<%= form_for([@post,@post.comments.build], html:{class:'login_form'}) do |form| %>  
+
+  <div>
+  <%= form.label :content %><br>
+  <%= form.text_field :content %>
+  </div>
+
+ 
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<br>
+
+<div>
+  <%= link_to "Back to comments", "/" %>
+</div>
